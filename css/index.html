@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css"> 
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="container">welcome to Obaapa's kicthen</h1>
+  <h2> Our Menu </h2>
+  <p id="menuItems"></p>
+  <select name="menufield" id="menufield" class="menufield">
+  <option value="Fufu and Groundnut"> Fufu and Groundnut soup</option>
+  <option value="Jollof and chicken"> Jollof and chicken</option>
+  <option value="Banku and Tilapia"> Banku and Tilapia</option>
+  </select>
+  <!-- <input type = "text" name="" id="menufield" class="menufield"> -->
+  <input type="submit" value="submit" class="menusubmit">
+  <p id="userselection"></p>
+  <p id="ingrediants"></p>
+  <script>
+
+    
+    let item1 = "Fufu and Groundnut";
+    let item2 = " Banku and Tilapia ";
+    let item3 = " Jollof and chicken ";
+
+    let ing1 = ": cassava,plantain for the fufu and groundnutpaste,tomatoes,onions for the soup";
+    let ing2 = ":corn and cassava dough for the banku,tilapia pepper and tomatoes for the source";
+    let ing3 = ": rice,oil and chicken and some spices to taste";
+
+    document.getElementById("menuItems").innerHTML= "1." + item1  + "  2." +  item2  + " 3." +  item3; 
+
+    const menufield = document.querySelector(".menufield")
+    const menusubmit = document.querySelector(".menusubmit")
+
+    function checkmenu() {
+      const menuvalue = (menufield.value)
+
+      if(menuvalue=="Fufu and Groundnut"){
+        document.getElementById("userselection").innerHTML = "You have selected" + item1;
+        document.getElementById("ingrediants").innerHTML = "The ingrediants are" + ing1;
+      }
+
+      else if(menuvalue=="Jollof and chicken"){
+        document.getElementById("userselection").innerHTML = "you have selected" + item2;
+        document.getElementById("ingrediants").innerHTML = "The ingrediants are" + ing2;
+      }
+
+      else if(menuvalue=="Banku and Tilapia"){
+        document.getElementById("userselection").innerHTML = "you have selected" + item3;
+        document.getElementById("ingrediants").innerHTML = "The ingrediants are" + ing3;
+      }
+
+      else{
+        document.write("Sorry! We do not have the above but you can make another choice");
+      }
+
+    }
+
+    menusubmit.addEventListener("click", checkmenu);
+
+
+
+
+  </script>
+</body>
+</html>
